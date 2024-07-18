@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Pay</title>
+</head>
+<body>
+<h2>Employee Pay</h2>
+
+<script>
+let employeeName = prompt("Enter employee name:");
+let hoursWorked = parseFloat(prompt("Enter hours worked:"));
+let ratePerHour = parseFloat(prompt("Enter rate per hour:"));
+
+let basicPay = hoursWorked * ratePerHour;
+
+let tax = 0;
+if (basicPay > 50000) {
+    tax = 0.2 * basicPay;
+} else if (basicPay >= 20000) {
+    tax = 0.1 * basicPay;
+}
+
+let netPay = basicPay - tax;
+
+document.write(`<p><strong>Employee Name:</strong> ${employeeName}</p>`);
+document.write(`<p><strong>Basic Pay:</strong> $${basicPay.toFixed(2)}</p>`);
+document.write(`<p><strong>Tax Deducted:</strong> $${tax.toFixed(2)}</p>`);
+document.write(`<p><strong>Net Pay:</strong> $${netPay.toFixed(2)}</p>`);
+</script>
+
+</body>
+</html>
